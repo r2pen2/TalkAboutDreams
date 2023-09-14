@@ -28,8 +28,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: git submodule update --init --recursive
     - run: npm ci --legacy-peer-deps
     - run: cd client/src/libraries/Web-Legos
+    - run: git pull origin master
     - run: npm ci --legacy-peer-deps
     - run: cd ../../../
     - run: CI=false npm run build --if-present
