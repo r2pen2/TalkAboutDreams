@@ -29,8 +29,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci --legacy-peer-deps
-    - run: cd client/libraries/Web-Legos
+    - run: cd client/src/libraries/Web-Legos
     - run: npm ci --legacy-peer-deps
-    - run: cd ../../
+    - run: cd ../../../
     - run: CI=false npm run build --if-present
     - run: npm run test
