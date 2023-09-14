@@ -30,7 +30,14 @@ jobs:
         cache: 'npm'
     - run: git submodule update --init --recursive
     - run: npm ci --legacy-peer-deps
-    - run: cd client/src/libraries/Web-Legos
+    - run: ls
+    - run: cd client
+    - run: ls
+    - run: cd src
+    - run: ls
+    - run: cd libraries
+    - run: ls
+    - run: cd Web-Legos
     - run: git pull origin master
     - run: npm ci --legacy-peer-deps
     - run: cd ../../../
