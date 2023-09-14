@@ -31,8 +31,6 @@ jobs:
     - run: git submodule update --init --recursive
     - run: npm ci --legacy-peer-deps
     - run: ls
-    - run: cd client
-    - run: ls
     - run: cd src
     - run: ls
     - run: cd libraries
