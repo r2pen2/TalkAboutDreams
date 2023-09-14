@@ -9,12 +9,12 @@ import { Text } from '@nextui-org/react';
 export function App() {
 
   return (
-    <div className="App d-flex flex-column align-items-center w-100" data-testId="app">
+    <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
       <Router>
         <div className="app-content">
           <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh"}}>
-            <img src={powerBrick} alt="power-brick" data-testId="lego-brick" />
-            <Text h1 data-testId="title-text">BP-10700</Text>
+            <img src={powerBrick} alt="power-brick" data-testid="lego-brick" />
+            <Text h1 data-testid="title-text">BP-10700</Text>
           </section>
           {/** Place Navigation Here */}
             <Routes>
