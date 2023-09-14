@@ -28,17 +28,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: run dep. install
+    - name: Install core dependencies
       run: npm ci --legacy-peer-deps
-    - name: checkout submodules
+    - name: Checkout submodules
       run: git submodule update --init --recursive
-    - name: pull submodules
-      working-directory: src/libraries/Web-Legos
+    - name: Pull submodules
+      working-directory: client/src/libraries/Web-Legos
       run: git pull origin master
-    - name: install submodule dependencies
-      working-directory: src/libraries/Web-Legos
+    - name: Install submodule dependencies
+      working-directory: client/src/libraries/Web-Legos
       run: npm ci --legacy-peer-deps
-    - name: run tests
+    - name: Run client tests
+      working-directory: client
       run: | 
         CI=false npm run build --if-present
         npm run test
