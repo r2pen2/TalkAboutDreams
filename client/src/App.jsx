@@ -7,8 +7,22 @@ import powerBrick from "./assets/images/power-brick.gif";
 import { Text } from '@nextui-org/react';
 import { createContext } from 'react';
 
+// API Imports
+import { AuthenticationManager } from './libraries/Web-Legos/api/auth.ts'
+import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
+
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
+
+/** Site specific permissions */
+const permissions = new WLPermissionsConfig();
+
+/** Site AuthenticationManager */
+const authenticationManager = new AuthenticationManager(firebaseConfig, permissions);
+authenticationManager.initialize();
+
+/** Site AnalyticsManager */
+const analyticsManager = new AnalyticsManager(firebaseConfig)
 
 export function App(props) {
 
@@ -18,9 +32,13 @@ export function App(props) {
   /** Provider for all app contexts */
   function AppContextProvider(props) {
     return (
+      <AuthenticationManager.Context.Provider value={{AuthenticationManager}} >
+      <AnalyticsManager.Provider.Context.Provider value={{analyticsManager}} >
       <TestingContext.Provider value={{isTestingEnvironment}} >
         {props.children}
       </TestingContext.Provider>
+      </AnalyticsManager.Provider.Context.Provider>
+      </AuthenticationManager.Context.Provider >
     )
   }
 
