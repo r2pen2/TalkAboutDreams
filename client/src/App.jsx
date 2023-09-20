@@ -8,7 +8,8 @@ import { Text } from '@nextui-org/react';
 import { createContext } from 'react';
 
 // API Imports
-import { AuthenticationManager } from './libraries/Web-Legos/api/auth.ts'
+import { firebaseConfig } from './api/firebase.ts'
+import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 
 /** Context to keep track whether we're running tests right now */
@@ -23,6 +24,7 @@ authenticationManager.initialize();
 
 /** Site AnalyticsManager */
 const analyticsManager = new AnalyticsManager(firebaseConfig)
+analyticsManager.initialize();
 
 export function App(props) {
 
