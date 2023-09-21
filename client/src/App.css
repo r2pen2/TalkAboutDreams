@@ -2,8 +2,125 @@
   text-align: center;
   box-sizing: border-box;
   max-width: 100%;
+  background-color: #070709;
+}
+
+:root {
+  --headshotSize: 300px;
 }
 
 .app-content {
   width: 100%;
+}
+
+.dreams-button {
+  transition: all 0.5s ease;
+  filter: drop-shadow(0px 0px 5px #EF242788);
+}
+
+.dreams-button:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  filter: none;
+}
+
+.red-glow {
+  filter: drop-shadow(0px 0px 5px #EF2427);
+}
+
+.red-glow-light {
+  filter: drop-shadow(0px 0px 5px #EF242766);
+}
+
+.button-line-container .button-line {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 1px;
+  width: 100%;
+  background: #EF2427;
+  transition: all 0.5s ease-out;
+  filter: drop-shadow(0px 0px 5px #EF242766);
+}
+
+.button-line-container:hover .button-line {
+  width: 0px;
+  background: white;
+  filter: drop-shadow(0px 0px 5px white);
+}
+
+.home-top-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vw;
+  top: 0;
+  background-image: url("./assets/images/Rect\ Light.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  opacity: 0.6;
+  transform: rotate(90deg);
+}
+
+.home-top-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  background-image: linear-gradient(180deg, transparent 0%, #070709 50%);
+}
+
+.home-top-bio-container {
+  background-image: linear-gradient(239.59deg, rgb(44, 44, 45) -44.65%, rgb(26, 26, 30) 75.57%);
+  max-width: 600px;
+  min-height: 800px;
+  width: 100%;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  min-height: 400px;
+  position: relative;
+  padding-top: calc(1rem + calc(var(--headshotSize) / 2))
+}
+
+.red-shadow::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: calc(100% - 50px);
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  z-index: -1;
+  background: linear-gradient(79.42deg, #EF2427 -51.76%, #070709 75.15%);
+  opacity: 0.2;
+}
+
+.home-top-headshot {
+  border: 1rem solid #070709;
+  position: absolute;
+  height: var(--headshotSize);
+  width: var(--headshotSize);
+  top: calc(-1 * calc(var(--headshotSize) / 2));
+  left: calc(50% - calc(var(--headshotSize) / 2));
+  border-radius: 50%;
+}
+
+.home-top-left-col {
+  z-index: 2;
+  background-color: transparent;
+  justify-content: flex-end;
+}
+
+.home-top-right-col {
+  z-index: 2;
+  background-color: transparent;
+}
+
+@media (max-width: 990px) {
+  .home-top-left-col {
+    justify-content: center;
+  }
 }

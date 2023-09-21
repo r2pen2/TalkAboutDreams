@@ -3,14 +3,14 @@ import './App.css';
 
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import powerBrick from "./assets/images/power-brick.gif";
-import { Text } from '@nextui-org/react';
 import { createContext } from 'react';
 
 // API Imports
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
+import Navbar from './components/Navbar';
+import Homepage from './routes/Homepage';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -60,13 +60,9 @@ export function App(props) {
       { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
       <Router>
         <div className="app-content">
-            <section className="d-flex flex-column align-items-center justify-content-center" style={{height: "100vh", width: "100vw"}}>
-              <img src={powerBrick} alt="power-brick" data-testid="lego-brick" />
-              <Text h1 data-testid="title-text">BP-10700</Text>
-            </section>
-          {/** Place Navigation Here */}
+          <Navbar />
             <Routes>
-              {/** Place Routes Here */}
+              <Route path="*" element={<Homepage />} />
             </Routes>
           {/** Place Footer Here */}
         </div>

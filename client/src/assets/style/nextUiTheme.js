@@ -1,24 +1,52 @@
 // Library Imports
 import { createTheme } from "@nextui-org/react";
 
+export const creamy = "#f9f3c4"
+export const red700 = '#dd1522'
+export const red600 = '#EF2427'
+export const red500 = '#fd3127'
+export const red400 = '#f94745'
+export const red300 = '#ee6c6c'
+export const red200 = '#f69695'
+export const backgroundDark = "#070709"
+export const backgroundLight = "#171c1f"
+export const backgroundLighter = "#1E1D21"
+
 /** Default NextUI compatible theme object (lightmode only for now) */
 export const nextUiTheme = createTheme({
-  type: "light", // it could be "light" or "dark"
+  type: "dark", // it could be "light" or "dark"
   theme: {
     colors: {
-      primaryLight: "$purple200",
-      primaryLightHover: "$purple300",
-      primaryLightActive: "$purple400",
-      primaryLightContrast: "$purple600",
-      primary: "$purple600",
-      primaryBorder: "$purple500",
-      primaryBorderHover: "$purple600",
-      primarySolidHover: "$purple700",
-      primarySolidContrast: "#ffffff",
-      primaryShadow: "$purple600",
+
+      background: backgroundDark,
+
+      primaryLight: red200,
+      primaryLightHover: red300,
+      primaryLightActive: red400,
+      primaryLightContrast: red600,
+      primary: red600,
+      primaryBorder: red500,
+      primaryBorderHover: red600,
+      primarySolidHover: red700,
+      primarySolidContrast: creamy,
+      primaryShadow: red600,
+
+      text: "#ffffff",
+
+      secondaryLight: "$purple200",
+      secondaryLightHover: "$purple300",
+      secondaryLightActive: "$purple400",
+      secondaryLightContrast: "$purple600",
+      secondary: "$purple600",
+      secondaryBorder: "$purple500",
+      secondaryBorderHover: "$purple600",
+      secondarySolidHover: "$purple700",
+      secondarySolidContrast: "#ffffff",
+      secondaryShadow: "$purple600",
 
       success: "#A6C437",
-      white: "#ffffff",  
+      white: "#ffffff",
+      accent: "#fff8c8"  
     },
     space: {},
     fonts: {},
