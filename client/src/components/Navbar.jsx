@@ -18,7 +18,7 @@ export default function Navbar() {
       <WLNavContent>
         <WLNavContent.Left>
           <NextUINavbar.Toggle className="d-flex d-xxl-none px-3" />
-          <WLNavBrandLeft showIn="md" source={logo} title="Talk About Dreams" imageSize={60} />
+          <WLNavBrandLeft source={logo} title="Talk About Dreams" imageSize={60} />
         </WLNavContent.Left>
           <NavbarPages />
         <WLNavContent.Right>
@@ -52,6 +52,17 @@ function NavbarPages() {
         </Text>
       </NextUINavbar.Link>
       <NextUINavbar.Link 
+        onClick={() => setActivePage("goal")}
+        isActive={checkLinkActive("goal")}
+        href="/#goal"
+        itemCss={{fontSize: navbarItemFontSize}}
+        className="px-2"
+      >
+        <Text b style={{color: (checkLinkActive("goal") ? red600 : "#9ca1a5"), filter: (checkLinkActive("goal") ? `drop-shadow(0px 0px 5px ${red600})` : "none")}}>
+          My Goal
+        </Text>
+      </NextUINavbar.Link>
+      <NextUINavbar.Link 
         onClick={() => setActivePage("services")}
         isActive={checkLinkActive("services")}
         href="/#services"
@@ -71,17 +82,6 @@ function NavbarPages() {
       >
         <Text b style={{color: (checkLinkActive("insights") ? red600 : "#9ca1a5"), filter: (checkLinkActive("insights") ? `drop-shadow(0px 0px 5px ${red600})` : "none")}}>
           Insights
-        </Text>
-      </NextUINavbar.Link>
-      <NextUINavbar.Link 
-        onClick={() => setActivePage("goal")}
-        isActive={checkLinkActive("goal")}
-        href="/#goal"
-        itemCss={{fontSize: navbarItemFontSize}}
-        className="px-2"
-      >
-        <Text b style={{color: (checkLinkActive("goal") ? red600 : "#9ca1a5"), filter: (checkLinkActive("goal") ? `drop-shadow(0px 0px 5px ${red600})` : "none")}}>
-          My Goal
         </Text>
       </NextUINavbar.Link>
       <NextUINavbar.Link 

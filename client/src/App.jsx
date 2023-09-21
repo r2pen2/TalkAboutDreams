@@ -26,6 +26,10 @@ authenticationManager.initialize();
 const analyticsManager = new AnalyticsManager(firebaseConfig)
 analyticsManager.initialize();
 
+const backgroundColor1 = "rgb(44, 44, 45)";
+const backgroundColor2 = "rgb(26, 26, 30)";
+export const platformGradient = `linear-gradient(239.59deg, ${backgroundColor1} -44.65%, ${backgroundColor2} 75.57%)`;
+
 export function App(props) {
 
   /** Whether this is a testing environment */
