@@ -52,14 +52,14 @@ function NavbarPages() {
         </Text>
       </NextUINavbar.Link>
       <NextUINavbar.Link 
-        onClick={() => setActivePage("goal")}
-        isActive={checkLinkActive("goal")}
-        href="/#goal"
+        onClick={() => setActivePage("julia")}
+        isActive={checkLinkActive("julia")}
+        href="/#julia"
         itemCss={{fontSize: navbarItemFontSize}}
         className="px-2"
       >
-        <Text b style={{color: (checkLinkActive("goal") ? red600 : "#9ca1a5"), filter: (checkLinkActive("goal") ? `drop-shadow(0px 0px 5px ${red600})` : "none")}}>
-          My Goal
+        <Text b style={{color: (checkLinkActive("julia") ? red600 : "#9ca1a5"), filter: (checkLinkActive("julia") ? `drop-shadow(0px 0px 5px ${red600})` : "none")}}>
+          Who I Am
         </Text>
       </NextUINavbar.Link>
       <NextUINavbar.Link 
