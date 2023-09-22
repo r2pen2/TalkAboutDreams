@@ -31,6 +31,8 @@ export const nextUiTheme = createTheme({
       primarySolidContrast: creamy,
       primaryShadow: red600,
 
+      creamy: creamy,
+
       text: "#ffffff",
 
       secondaryLight: "$purple200",
