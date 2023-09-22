@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {ColoredShadowBox, WLSpinnerPage} from "../libraries/Web-Legos/components/Layout"
+import {ColoredShadowBox, TogglePane, WLSpinnerPage} from "../libraries/Web-Legos/components/Layout"
 import { WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
 import { Button, Divider, Spacer, Text } from '@nextui-org/react'
 import { backgroundDark, creamy, red600 } from '../assets/style/nextUiTheme'
@@ -17,6 +17,23 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import { platformGradient } from '../App'
 import { LineButton } from '../libraries/Web-Legos/components/Buttons'
 import { useState } from 'react'
+import { gray900 } from '../libraries/Web-Legos/api/colors'
+
+const serviceBoxColors = {
+  "1on1": HoverActionBox.colors.blue,
+  "groups": HoverActionBox.colors.purple,
+  "retreats": HoverActionBox.colors.yellow,
+  "workshops": HoverActionBox.colors.green,
+}
+
+const serviceBoxIcons = {
+  "1on1": <FaceIcon />,
+  "groups": <GroupsIcon />,
+  "retreats": <HouseIcon />,
+  "workshops": <ConstructionIcon />,
+}
+
+export const serviceBoxBackgroundColor = gray900;
 
 export default function Homepage() {
 
@@ -75,11 +92,17 @@ export default function Homepage() {
     )
   }
 
+  const [activeBox, setActiveBox] = useState(null);
+
   function handleActionBoxClick(key) {
     setActiveBox(key)
   }
 
-  const [activeBox, setActiveBox] = useState(null);
+  function renderCurrentBox() {
+    return (
+      serviceBoxIcons[activeBox]
+    )
+  }
   
   return (
     <WLSpinnerPage dependencies={[]}>
@@ -124,80 +147,95 @@ export default function Homepage() {
       <section className="d-flex flex-column align-items-center justify-content-center container w-100 py-5">
         <WLHeader>What I Offer:</WLHeader>
         <Spacer y={1} />
-        <div className="row w-100" style={{position: "relative"}}>
-          <div className="col-12 col-md-6 col-xl-3 py-3">
-            <HoverActionBox
-              background="#1a1a1e"
-              color={HoverActionBox.colors.blue}
-              accentColor={creamy}
-              icon={<FaceIcon />}
-              buttonText="Read More"
-              stackIndex={1}
-              onClick={() => handleActionBoxClick("1on1")}
-            >
-              <HoverActionBox.Title text="1 on 1 Sessions" color="white" />
-              <HoverActionBox.Body>
-                <WLText indent align="left">
-                  Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person.
-                </WLText>
-              </HoverActionBox.Body>
-            </HoverActionBox>
-          </div>
-          <div className="col-12 col-md-6 col-xl-3 py-3">
-            <HoverActionBox
-              background="#1a1a1e"
-              color={HoverActionBox.colors.purple}
-              accentColor={creamy}
-              icon={<GroupsIcon />}
-              buttonText="Read More"
-              stackIndex={2}
-              onClick={() => handleActionBoxClick("groups")}
-            >
-              <HoverActionBox.Title text="Group Sessions" color="white" />
-              <HoverActionBox.Body>
-                <WLText indent align="left">
-                  Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person.
-                </WLText>
-              </HoverActionBox.Body>
-            </HoverActionBox>
-          </div>
-          <div className="col-12 col-md-6 col-xl-3 py-3">
-            <HoverActionBox
-              background="#1a1a1e"
-              color={HoverActionBox.colors.yellow}
-              accentColor={creamy}
-              icon={<HouseIcon />}
-              buttonText="Read More"
-              stackIndex={3}
-              onClick={() => handleActionBoxClick("retreats")}
-            >
-              <HoverActionBox.Title text="Dream Retreats" color="white" />
-              <HoverActionBox.Body>
-                <WLText indent align="left">
-                  Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat.
-                </WLText>
-              </HoverActionBox.Body>
-            </HoverActionBox>
-          </div>
-          <div className="col-12 col-md-6 col-xl-3 py-3">
-            <HoverActionBox
-              background="#1a1a1e"
-              color={HoverActionBox.colors.green}
-              accentColor={creamy}
-              icon={<ConstructionIcon />}
-              buttonText="Read More"
-              stackIndex={4}
-              onClick={() => handleActionBoxClick("workshops")}
-            >
-              <HoverActionBox.Title text="Mini Workshops" color="white" />
-              <HoverActionBox.Body>
-                <WLText indent align="left">
-                  Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis.
-                </WLText>
-              </HoverActionBox.Body>
-            </HoverActionBox>
-          </div>
-        </div>
+        <TogglePane flipped={activeBox}>
+          <TogglePane.Item1>
+            <div className="row w-100 ">
+              <div className="col-12 col-md-6 col-xl-3 py-3">
+                <HoverActionBox
+                  background={serviceBoxBackgroundColor}
+                  color={serviceBoxColors['1on1']}
+                  accentColor={creamy}
+                  icon={serviceBoxIcons['1on1']}
+                  buttonText="Read More"
+                  stackIndex={1}
+                  hidden={activeBox && activeBox !== "1on1"}
+                  active={activeBox === "1on1"}
+                  onClick={() => handleActionBoxClick("1on1")}
+                >
+                  <HoverActionBox.Title text="1 on 1 Sessions" color="white" />
+                  <HoverActionBox.Body>
+                    <WLText indent align="left">
+                      Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person. Get 1 on 1 dream analysis sessions over zoom or in person.
+                    </WLText>
+                  </HoverActionBox.Body>
+                </HoverActionBox>
+              </div>
+              <div className="col-12 col-md-6 col-xl-3 py-3">
+                <HoverActionBox
+                  background={serviceBoxBackgroundColor}
+                  color={serviceBoxColors['groups']}
+                  accentColor={creamy}
+                  icon={serviceBoxIcons['groups']}
+                  buttonText="Read More"
+                  stackIndex={2}
+                  hidden={activeBox && activeBox !== "groups"}
+                  active={activeBox === "groups"}
+                  onClick={() => handleActionBoxClick("groups")}
+                >
+                  <HoverActionBox.Title text="Group Sessions" color="white" />
+                  <HoverActionBox.Body>
+                    <WLText indent align="left">
+                      Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person. Get group dream analysis sessions over zoom or in person.
+                    </WLText>
+                  </HoverActionBox.Body>
+                </HoverActionBox>
+              </div>
+              <div className="col-12 col-md-6 col-xl-3 py-3">
+                <HoverActionBox
+                  background={serviceBoxBackgroundColor}
+                  color={serviceBoxColors['retreats']}
+                  accentColor={creamy}
+                  icon={serviceBoxIcons['retreats']}
+                  buttonText="Read More"
+                  stackIndex={3}
+                  hidden={activeBox && activeBox !== "retreats"}
+                  active={activeBox === "retreats"}
+                  onClick={() => handleActionBoxClick("retreats")}
+                >
+                  <HoverActionBox.Title text="Dream Retreats" color="white" />
+                  <HoverActionBox.Body>
+                    <WLText indent align="left">
+                      Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat. Foster a deeper connection with your dream world by going on a dream retreat.
+                    </WLText>
+                  </HoverActionBox.Body>
+                </HoverActionBox>
+              </div>
+              <div className="col-12 col-md-6 col-xl-3 py-3">
+                <HoverActionBox
+                  background={serviceBoxBackgroundColor}
+                  color={serviceBoxColors['workshops']}
+                  accentColor={creamy}
+                  icon={serviceBoxIcons['workshops']}
+                  buttonText="Read More"
+                  stackIndex={4}
+                  hidden={activeBox && activeBox !== "workshops"}
+                  active={activeBox === "workshops"}
+                  onClick={() => handleActionBoxClick("workshops")}
+                >
+                  <HoverActionBox.Title text="Mini Workshops" color="white" />
+                  <HoverActionBox.Body>
+                    <WLText indent align="left">
+                      Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis. Join me for a workshop and learn the fundamentals of dream analysis.
+                    </WLText>
+                  </HoverActionBox.Body>
+                </HoverActionBox>
+              </div>
+            </div>
+          </TogglePane.Item1>
+          <TogglePane.Item2>
+            {renderCurrentBox()}
+          </TogglePane.Item2>
+        </TogglePane>
         <Spacer y={2} />
         <LineButton size="xl" b text="Contact Me" color={red600} />
       </section>
