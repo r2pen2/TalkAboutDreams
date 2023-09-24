@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Divider, Navbar as NextUINavbar, Text } from "@nextui-org/react";
+import { Navbar as NextUINavbar, Text } from "@nextui-org/react";
 import {WLNavBrandLeft, WLNavContent} from "../libraries/Web-Legos/components/Navigation"
 
 import logo from "../assets/images/logoTransparent.svg"

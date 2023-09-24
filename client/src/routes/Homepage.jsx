@@ -1,25 +1,29 @@
-import React from 'react'
-
-import {ColoredShadowBox, TogglePane, WLSpinnerPage} from "../libraries/Web-Legos/components/Layout"
-import { WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
-import { Button, Divider, Spacer, Text } from '@nextui-org/react'
-import { backgroundDark, creamy, red600 } from '../assets/style/nextUiTheme'
-
-import mom from "../assets/images/mom.JPG"
-import logoTransparent from "../assets/images/logoTransparent.svg"
-import { RockCandyBackground1, GrowingCircles } from '../libraries/Web-Legos/components/Backgrounds'
-import { HoverActionBox } from '../libraries/Web-Legos/components/Content'
-
+// Library Imports
+import React, { useState } from 'react'
+import { Spacer, Text } from '@nextui-org/react'
 import GroupsIcon from '@mui/icons-material/Groups';
 import FaceIcon from '@mui/icons-material/Face';
 import HouseIcon from '@mui/icons-material/House';
 import ConstructionIcon from '@mui/icons-material/Construction';
-import { platformGradient } from '../App'
-import { LineButton } from '../libraries/Web-Legos/components/Buttons'
-import { useState } from 'react'
+
+// Style Imports
+import { backgroundDark, creamy, red600 } from '../assets/style/nextUiTheme'
+
+// API Imports
 import { gray900 } from '../libraries/Web-Legos/api/colors'
 
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+// Component Imports
+import { platformGradient } from '../App'
+import { LineButton } from '../libraries/Web-Legos/components/Buttons'
+import {ColoredShadowBox, WLSpinnerPage} from "../libraries/Web-Legos/components/Layout"
+import { QuoteBlock, WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
+import mom from "../assets/images/mom.JPG"
+import logoTransparent from "../assets/images/logoTransparent.svg"
+import { RockCandyBackground1, GrowingCircles } from '../libraries/Web-Legos/components/Backgrounds'
+import { HoverActionBox, TestimonialCard, WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content'
+import { SiteModel, WLTestimonial } from '../libraries/Web-Legos/api/models.ts';
+import { ModelEditButton, } from '../libraries/Web-Legos/components/Modals';
+import { useEffect } from 'react';
 
 const serviceBoxColors = {
   "1on1": HoverActionBox.colors.blue,
@@ -38,6 +42,18 @@ const serviceBoxIcons = {
 export const serviceBoxBackgroundColor = gray900;
 
 export default function Homepage() {
+
+  const [userCanEditTestimonials, setUserCanEditTestimonials] = useState(false);
+  const [currentModel, setCurrentModel] = useState(new SiteModel());
+  const [modelEditModalOpen, setModelEditModalOpen] = useState(false);
+
+  const [testimonials, setTestimonials] = useState([]);
+  const [testimonialsFetched, setTestimonialsFetched] = useState(false);
+
+  useEffect(() => {
+    setTestimonials([WLTestimonial.examples.default, WLTestimonial.examples.default, WLTestimonial.examples.default])
+    // WLTestimonial.getAndSet(setTestimonials, setTestimonialsFetched)
+  }, [])
 
   function HeaderText() {
     return (
@@ -94,19 +110,7 @@ export default function Homepage() {
     )
   }
 
-  const [activeBox, setActiveBox] = useState(null);
-
-  function handleActionBoxClick(key) {
-    setActiveBox(key)
-  }
-
-  function renderCurrentBox() {
-    return (
-      <div className="w-100">
-        
-      </div>
-    )
-  }
+  function handleActionBoxClick(key) { }
   
   return (
     <WLSpinnerPage dependencies={[]}>
@@ -148,7 +152,7 @@ export default function Homepage() {
           </WLText>
         </div>
       </section>
-      <section className="d-flex flex-column align-items-center justify-content-center container w-100 py-5" id="services">
+      <section className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 px-2 px-md-5" id="services">
         <WLHeader>What I Offer:</WLHeader>
         <Spacer y={1} />
         <div className="row w-100 ">
@@ -160,8 +164,6 @@ export default function Homepage() {
               icon={serviceBoxIcons['1on1']}
               buttonText="Schedule Now"
               stackIndex={1}
-              hidden={activeBox && activeBox !== "1on1"}
-              active={activeBox === "1on1"}
               onClick={() => handleActionBoxClick("1on1")}
             >
               <HoverActionBox.Title text="1 on 1 Sessions" color="white" />
@@ -180,8 +182,6 @@ export default function Homepage() {
               icon={serviceBoxIcons['groups']}
               buttonText="Schedule Now"
               stackIndex={2}
-              hidden={activeBox && activeBox !== "groups"}
-              active={activeBox === "groups"}
               onClick={() => handleActionBoxClick("groups")}
             >
               <HoverActionBox.Title text="Group Sessions" color="white" />
@@ -200,8 +200,6 @@ export default function Homepage() {
               icon={serviceBoxIcons['retreats']}
               buttonText="Schedule Now"
               stackIndex={3}
-              hidden={activeBox && activeBox !== "retreats"}
-              active={activeBox === "retreats"}
               onClick={() => handleActionBoxClick("retreats")}
             >
               <HoverActionBox.Title text="Dream Retreats" color="white" />
@@ -220,8 +218,6 @@ export default function Homepage() {
               icon={serviceBoxIcons['workshops']}
               buttonText="Schedule Now"
               stackIndex={4}
-              hidden={activeBox && activeBox !== "workshops"}
-              active={activeBox === "workshops"}
               onClick={() => handleActionBoxClick("workshops")}
             >
               <HoverActionBox.Title text="Mini Workshops" color="white" />
@@ -235,6 +231,20 @@ export default function Homepage() {
         </div>
         <Spacer y={2} />
         <LineButton size="xl" b text="Contact Me" color={red600} />
+      </section>
+      <section id="insights">
+        <WLSlick>
+          {testimonials.map((t, i) => {
+            return <TestimonialCard
+              outlineWeight="2px"
+              key={i} 
+              testimonial={t}
+              glyphColor={red600}
+              accentColor={gray900}
+              editButton={<ModelEditButton model={WLTestimonial} data={t} userCanEdit={userCanEditTestimonials} setCurrentModel={setCurrentModel} setEditModalOpen={setModelEditModalOpen}/>}
+            />})
+          }
+        </WLSlick>
       </section>
     </WLSpinnerPage>
   )
