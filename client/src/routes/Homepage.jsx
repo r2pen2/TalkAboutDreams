@@ -24,6 +24,7 @@ import { HoverActionBox, TestimonialCard, WLFlickity, WLSlick } from '../librari
 import { SiteModel, WLTestimonial } from '../libraries/Web-Legos/api/models.ts';
 import { ModelEditButton, } from '../libraries/Web-Legos/components/Modals';
 import { useEffect } from 'react';
+import { MUIBackArrow, MUINextArrow } from '../libraries/Web-Legos/components/Input';
 
 const serviceBoxColors = {
   "1on1": HoverActionBox.colors.blue,
@@ -233,7 +234,10 @@ export default function Homepage() {
         <LineButton size="xl" b text="Contact Me" color={red600} />
       </section>
       <section id="insights">
-        <WLSlick>
+        <WLSlick
+          buttonStyle="MUI"
+          buttonColor={creamy}
+        >
           {testimonials.map((t, i) => {
             return <TestimonialCard
               outlineWeight="2px"
