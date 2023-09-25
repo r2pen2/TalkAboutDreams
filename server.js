@@ -20,7 +20,7 @@ app.use(fileUpload());
 dotenv.config();
 
 // Start listening on defined port
-app.listen(25565, () => {
+app.listen(3004, () => {
     console.log('Now listening on port ' + 3004);
 });
 

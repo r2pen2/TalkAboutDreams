@@ -171,14 +171,17 @@ export default function Homepage() {
         </section>
         <section className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 px-2 px-md-5" id="services">
           <div className="row w-100" style={{position: 'relative', zIndex: 1}}>
-
-          <Text h1 className='d-inline' size="36px">
-            How I Can 
-            <Text h1 size="36px" className='d-inline red-glow-light' b css={{paddingRight: ".5rem", paddingLeft:".5rem", textGradient: `45deg, ${red600} 0%, ${creamy} 500%`}}>
-              Help
-            </Text>
-          </Text>
-          <Spacer y={1} />
+            <div className="col-12">
+              <Text h1 className='d-inline' size="36px">
+                How I Can 
+                <Text h1 size="36px" className='d-inline red-glow-light' b css={{paddingRight: ".5rem", paddingLeft:".5rem", textGradient: `45deg, ${red600} 0%, ${creamy} 500%`}}>
+                  Help
+                </Text>
+              </Text>
+            </div>
+            <div className="col-12">
+              <Spacer y={1} />
+            </div>
             <div className="col-12 col-md-6 col-xl-3 py-3">
               <HoverActionBox
                 background={serviceBoxBackgroundColor}
@@ -385,10 +388,6 @@ function Contact() {
         <div className="d-flex flex-row justify-content-center w-100">
           <div className="gap-2 d-flex flex-column align-items-start justify-content-center contact-form w-100 mx-2 my-5 mx-md-5"  style={{maxWidth: 1400}}>
             <div className="container-fluid d-flex flex-column">
-              <div className="row">
-                <WLHeader setLoaded={setContactHeaderLoaded} align="start" firestoreId="contact-header" editable={userCanEditText} />
-                <WLText setLoaded={setContactSubtitleLoaded} align="start" firestoreId="contact-subtitle" editable={userCanEditText} />
-              </div>
               <div className="row pt-2">
                 <Input id="name" clearable bordered label="Your Name" fullWidth css={{display: "flex", alignItems: "start"}} />
               </div>
