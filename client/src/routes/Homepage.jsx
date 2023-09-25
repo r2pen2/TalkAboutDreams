@@ -7,7 +7,7 @@ import HouseIcon from '@mui/icons-material/House';
 import ConstructionIcon from '@mui/icons-material/Construction';
 
 // Style Imports
-import { backgroundDark, creamy, red600 } from '../assets/style/nextUiTheme'
+import { backgroundDark, backgroundLight, backgroundLighter, creamy, red600 } from '../assets/style/nextUiTheme'
 
 // API Imports
 import { gray900 } from '../libraries/Web-Legos/api/colors'
@@ -19,7 +19,7 @@ import {ColoredShadowBox, WLSpinnerPage} from "../libraries/Web-Legos/components
 import { QuoteBlock, WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
 import mom from "../assets/images/mom.JPG"
 import logoTransparent from "../assets/images/logoTransparent.svg"
-import { RockCandyBackground1, GrowingCircles } from '../libraries/Web-Legos/components/Backgrounds'
+import { RockCandyBackground1, GrowingCircles, TornadoBackground1, GradientTopRight } from '../libraries/Web-Legos/components/Backgrounds'
 import { HoverActionBox, TestimonialCard, WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content'
 import { SiteModel, WLTestimonial } from '../libraries/Web-Legos/api/models.ts';
 import { ModelEditButton, } from '../libraries/Web-Legos/components/Modals';
@@ -116,11 +116,11 @@ export default function Homepage() {
   return (
     <WLSpinnerPage dependencies={[]}>
       <section id="dreams" className="d-flex flex-column w-100 align-items-center justify-content-center" style={{height: "100vh", marginTop: "-100px"}}>
-        <RockCandyBackground1 color={red600} fadeColor={backgroundDark} fadePosition={"50%"} sectionHeight='calc(100vh)'/>
+        <RockCandyBackground1 color={red600} sectionHeight='100vh'/>
         <LargeHeader />
         <SmallHeader />
       </section>
-      <section id="julia" className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 sticky-walls" style={{paddingLeft: 0, paddingRight: 0}}>
+      <section id="julia" className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 sticky-walls" style={{paddingLeft: 0, paddingRight: 0,position: 'relative', zIndex: 1}}>
         <div className="row w-100">
           <div className="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center" >
             <img src={mom} alt="julia-dobbelaar" className="home-top-headshot"/>
@@ -143,7 +143,7 @@ export default function Homepage() {
           </div>
         </div>
       </section>
-      <section className="my-5 px-2 px-md-5 d-flex flex-column align-items-center justify-content-center w-100 bg-transparent-red" style={{height: 300}}>
+      <section className="my-5 px-2 px-md-5 d-flex flex-column align-items-center justify-content-center w-100 bg-transparent-red" style={{height: 300,position: 'relative', zIndex: 1}}>
         <div style={{maxWidth: 900}}>
           <WLHeader>
             What is Dream Analysis?
@@ -154,9 +154,9 @@ export default function Homepage() {
         </div>
       </section>
       <section className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 px-2 px-md-5" id="services">
+        <div className="row w-100" style={{position: 'relative', zIndex: 1}}>
         <WLHeader>What I Offer:</WLHeader>
         <Spacer y={1} />
-        <div className="row w-100 ">
           <div className="col-12 col-md-6 col-xl-3 py-3">
             <HoverActionBox
               background={serviceBoxBackgroundColor}
@@ -229,9 +229,10 @@ export default function Homepage() {
               </HoverActionBox.Body>
             </HoverActionBox>
           </div>
+          `<Spacer y={2} />
+          `<LineButton size="xl" b text="Contact Me" color={red600}/>
         </div>
-        <Spacer y={2} />
-        <LineButton size="xl" b text="Contact Me" color={red600} />
+        <TornadoBackground1 flipX opacity={.4} color={backgroundLight} sectionHeight='100%'/>
       </section>
       <section id="insights">
         <WLSlick
