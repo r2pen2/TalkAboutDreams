@@ -112,7 +112,7 @@ export default function Homepage() {
     return (
       <div className="d-flex d-lg-none flex-column align-items-center justify-content-center py-5" style={{zIndex: 2, marginTop: "5rem"}}>
           <div className="d-flex flex-column align-items-center justify-content-center" style={{zIndex: 3}}>
-            <img src={logoTransparent} alt="logo-transparent" style={{width: "100%", height: "auto", maxWidth: 300}} />
+            <img src={mom} alt="julia-dobbelaar" className="home-top-headshot"/>
             <GrowingCircles color={creamy} size={300}/>
           </div>
           <Spacer y={3} />
