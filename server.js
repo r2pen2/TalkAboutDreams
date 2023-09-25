@@ -40,7 +40,7 @@ app.use("/site-models", siteModels);
 // Server site rules
 app.use("/site-rules", siteRules);
 // Server site mail
-app.use("/site-mail", siteMail);
+// app.use("/site-mail", siteMail);
 
 // Allow post to /images, placing an image in the static folder
 app.post("/images/*", (req, res) => {
