@@ -2,7 +2,10 @@
   text-align: center;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #070709;
+  background: url("./assets/images/sun-tornado.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 section {
@@ -51,14 +54,8 @@ section {
   z-index: 2;
 }
 
-.headshot-container {
-  height: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.dreams-img-large {
+  border: .5rem solid #1a1a1e;
 }
 
 .home-top-headshot {
@@ -117,4 +114,8 @@ section {
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
+}
+
+.water {
+  background: linear-gradient(to bottom, #00989822, transparent)
 }
