@@ -19,14 +19,12 @@ import {ColoredShadowBox, WLSpinnerPage} from "../libraries/Web-Legos/components
 import { QuoteBlock, WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
 import mom from "../assets/images/mom.JPG"
 import momLarge from "../assets/images/large.jpg"
-import logoTransparent from "../assets/images/logoTransparent.svg"
-import { RockCandyBackground1, GrowingCircles, TornadoBackground1, CenteredBlob1 } from '../libraries/Web-Legos/components/Backgrounds'
+import { RockCandyBackground1, GrowingCircles } from '../libraries/Web-Legos/components/Backgrounds'
 import { HoverActionBox, TestimonialCard, WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content'
 import { SiteModel, WLTestimonial } from '../libraries/Web-Legos/api/models.ts';
 import { ModelEditButton, } from '../libraries/Web-Legos/components/Modals';
 import { useEffect, useContext } from 'react';
-import { FloatingIsland } from '../libraries/Web-Legos/components/Decoration';
-import silhouettes from "../assets/images/Silhouettes Cream.png"
+import { FloatingIsland, Mountains } from '../libraries/Web-Legos/components/Decoration';
 
 
 
@@ -53,6 +51,30 @@ const serviceBoxIcons = {
 }
 
 export const serviceBoxBackgroundColor = gray900;
+
+
+const DreamMountains = () => (
+  <Mountains 
+    color1="#f0672c"
+    color2="#f0b666" 
+    color3={red600} 
+    color4={creamy}
+    color5="#f09242"
+    color6="#f2d692"
+    style={{position:"absolute", left: 0, bottom: 0}}
+  />
+)
+const MountainsUpsideDown = () => (
+  <Mountains 
+    color1="#f0672c"
+    color2="#f0b666" 
+    color3={red600} 
+    color4={creamy}
+    color5="#f09242"
+    color6="#f2d692"
+    style={{transform: "scaleY(-1)", position:"absolute", left: 0, top: 0, opacity: 0.4}}
+  />
+)
 
 export default function Homepage() {
 
@@ -131,7 +153,7 @@ export default function Homepage() {
         <RockCandyBackground1 color={red600} sectionHeight='100vh'/>
         <LargeHeader />
         <SmallHeader />
-        <Mountains />
+        <DreamMountains />
       </section>
       <div className="water">
         <section id="julia" className="d-flex flex-column align-items-center justify-content-center container-fluid w-100 py-5 sticky-walls" style={{paddingLeft: 0, paddingRight: 0,position: 'relative', zIndex: 1}}>
@@ -412,45 +434,5 @@ function Contact() {
           </div>
         </div>
       </footer>
-  )
-}
-
-// style={{position:"absolute", left: 0}}
-
-function Mountains() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" classname="w-100" viewBox="-60 450 1770 450" style={{position:"absolute", left: 0, bottom: 0}}>
-      <polygon fill="#ef2427" points="957 450 539 900 1396 900"/>
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900"/>
-      <polygon fill="#f0672c" points="-60 900 398 662 816 900"/>
-      <polygon fill="#ba4f11" points="337 900 398 662 816 900"/>
-      <polygon fill="#f09242" points="1203 546 1552 900 876 900"/>
-      <polygon fill="#c97d33" points="1203 546 1552 900 1162 900"/>
-      <polygon fill="#f0b666" points="641 695 886 900 367 900"/>    
-      <polygon fill="#d7a65d" points="587 900 641 695 886 900"/>
-      <polygon fill="#f2d692" points="1710 900 1401 632 1096 900"/>
-      <polygon fill="#e6cd8e" points="1710 900 1401 632 1365 900"/>
-      <polygon fill="#f9f3c4" points="1210 900 971 687 725 900"/>
-      <polygon fill="#f9f3c4" points="943 900 1210 900 971 687"/>
-    </svg>
-  )
-}
-
-function MountainsUpsideDown() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" classname="w-100" viewBox="-60 450 1770 450" style={{transform: "scaleY(-1)", position:"absolute", left: 0, top: 0, opacity: 0.4}}>
-      <polygon fill="#ef2427" points="957 450 539 900 1396 900"/>
-      <polygon fill="#aa0000" points="957 450 872.9 900 1396 900"/>
-      <polygon fill="#f0672c" points="-60 900 398 662 816 900"/>
-      <polygon fill="#ba4f11" points="337 900 398 662 816 900"/>
-      <polygon fill="#f09242" points="1203 546 1552 900 876 900"/>
-      <polygon fill="#c97d33" points="1203 546 1552 900 1162 900"/>
-      <polygon fill="#f0b666" points="641 695 886 900 367 900"/>    
-      <polygon fill="#d7a65d" points="587 900 641 695 886 900"/>
-      <polygon fill="#f2d692" points="1710 900 1401 632 1096 900"/>
-      <polygon fill="#e6cd8e" points="1710 900 1401 632 1365 900"/>
-      <polygon fill="#f9f3c4" points="1210 900 971 687 725 900"/>
-      <polygon fill="#f9f3c4" points="943 900 1210 900 971 687"/>
-    </svg>
   )
 }
