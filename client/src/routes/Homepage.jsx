@@ -78,6 +78,8 @@ const MountainsUpsideDown = () => (
 
 export default function Homepage() {
 
+  const [formSent, setFormSent] = useState(false);
+
   const [userCanEditTestimonials, setUserCanEditTestimonials] = useState(false);
   const [currentModel, setCurrentModel] = useState(new SiteModel());
   const [modelEditModalOpen, setModelEditModalOpen] = useState(false);
@@ -307,13 +309,13 @@ export default function Homepage() {
         </WLSlick>
       </section>
       <FloatingIsland color={creamy} islandCount={1} weight="0.1rem" width={1400} />
-      <Contact />
+      <Contact formSent={formSent} setFormSent={setFormSent}/>
     </WLSpinnerPage>
   )
 }
 
 
-function Contact() {
+function Contact({formSent, setFormSent}) {
   
   const [contactHeaderLoaded, setContactHeaderLoaded] = useState(false);
   const [contactSubtitleLoaded, setContactSubtitleLoaded] = useState(false);
@@ -366,31 +368,9 @@ function Contact() {
     sendForm();
     window.location = "/thank-you";
   }
-
-  function getCaptchaMessage() {
-    const messages = [
-      "Are you as real as our little learners? Prove it by solving this puzzle!",
-      "Let’s play a quick game! Show us your human skills below!",
-      "Are you a clever human like our little scholars? Prove it below!",
-      "Quick! Show us you're not a robot so we can welcome you to our learning family!",
-      "Join our kiddos in a mini-challenge — prove you're human below!",
-      "Solve this puzzle, and you're in the Smartypants Club with our little ones!",
-      "Pssst! Can you solve this like a super-smart grown-up?",
-      "Our little bookworms challenge you to prove you’re human! Puzzle time!",
-      "Jump into the kiddie pool by showing us your human-ness below!",
-      "A quick brain teaser to join our circle of learning heroes! Prove you’re human below!"
-    ]
-
-    function getRandomValueFromArray(array) {
-      if (array.length === 0) {
-          return null; // return null if the array is empty
-      }
   
-      var randomIndex = Math.floor(Math.random() * array.length);
-      return array[randomIndex];
-    }
-
-    return getRandomValueFromArray(messages);
+  function handleButtonClick() {
+    setFormSent(true)
   }
 
   return (
@@ -429,7 +409,7 @@ function Contact() {
               </div>
             </div>
             <div className="py-3 w-100">            
-              <LineButton text="Speak With Me" color={red600} />
+              <LineButton text={formSent ? "Thank You!" : "Speak With Me"} closed={formSent} color={red600} onClick={handleButtonClick} />
             </div>
           </div>
         </div>
