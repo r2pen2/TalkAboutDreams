@@ -1,6 +1,6 @@
 // Library Imports
 import React, { useState } from 'react'
-import { Spacer, Text } from '@nextui-org/react'
+import { Divider, Spacer, Text } from '@nextui-org/react'
 import GroupsIcon from '@mui/icons-material/Groups';
 import FaceIcon from '@mui/icons-material/Face';
 import HouseIcon from '@mui/icons-material/House';
@@ -19,12 +19,13 @@ import {ColoredShadowBox, WLSpinnerPage} from "../libraries/Web-Legos/components
 import { QuoteBlock, WLHeader, WLText } from '../libraries/Web-Legos/components/Text'
 import mom from "../assets/images/mom.JPG"
 import logoTransparent from "../assets/images/logoTransparent.svg"
-import { RockCandyBackground1, GrowingCircles, TornadoBackground1, GradientTopRight } from '../libraries/Web-Legos/components/Backgrounds'
+import { RockCandyBackground1, GrowingCircles, TornadoBackground1, CenteredBlob1 } from '../libraries/Web-Legos/components/Backgrounds'
 import { HoverActionBox, TestimonialCard, WLFlickity, WLSlick } from '../libraries/Web-Legos/components/Content'
 import { SiteModel, WLTestimonial } from '../libraries/Web-Legos/api/models.ts';
 import { ModelEditButton, } from '../libraries/Web-Legos/components/Modals';
 import { useEffect } from 'react';
 import { MUIBackArrow, MUINextArrow } from '../libraries/Web-Legos/components/Input';
+import { FloatingIsland } from '../libraries/Web-Legos/components/Decoration';
 
 const serviceBoxColors = {
   "1on1": HoverActionBox.colors.blue,
@@ -229,12 +230,11 @@ export default function Homepage() {
               </HoverActionBox.Body>
             </HoverActionBox>
           </div>
-          `<Spacer y={2} />
-          `<LineButton size="xl" b text="Contact Me" color={red600}/>
         </div>
         <TornadoBackground1 flipX opacity={.4} color={backgroundLight} sectionHeight='100%'/>
       </section>
-      <section id="insights">
+       <section id="insights">
+        <FloatingIsland color={creamy}  width={600} flipY />
         <WLSlick
           buttonStyle="MUI"
           buttonColor={creamy}
@@ -250,6 +250,7 @@ export default function Homepage() {
             />})
           }
         </WLSlick>
+        <FloatingIsland color={creamy} weight="0.25rem" width={600} />
       </section>
     </WLSpinnerPage>
   )
