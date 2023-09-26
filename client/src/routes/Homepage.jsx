@@ -31,7 +31,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 // import { AuthenticationManagerContext, TAGMailManager, CurrentSignInContext } from '../App';
 import { TAGMailManager, } from '../App';
 import { FormResponse } from '../libraries/Web-Legos/api/admin.ts';
-import { WLImage } from '../libraries/Web-Legos/components/Images';
+import { WLImageV2 } from '../libraries/Web-Legos/components/Images';
 
 /** Colors for TAG mountains */
 const mountainColors = {
@@ -68,7 +68,7 @@ export default function Homepage() {
   const LandingSection = () => {
 
     /** Image to place in growing circles */
-    const HeaderImage = () => <WLImage firestoreId="header-circle" className="home-top-headshot"/>;
+    const HeaderImage = () => <WLImageV2 firestoreId="header-circle" className="home-top-headshot"/>;
 
     /** Contact button for header */
     const HeaderButton = () => <LineButton onClick={() => window.location = "/#contact"} text="Speak With Me" color={red600} />;
@@ -155,7 +155,7 @@ export default function Homepage() {
     /** Biography image to display on the left side of the screen */
     const BioImage = () => (
       <div className="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center py-2" >
-        <WLImage firestoreId="header-circle" className="dreams-img-large" />
+        <WLImageV2 firestoreId="julia-bio" className="dreams-img-large" />
       </div>
     )
 

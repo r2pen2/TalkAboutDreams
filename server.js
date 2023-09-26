@@ -42,6 +42,11 @@ app.use("/site-rules", siteRules);
 // Server site mail
 // app.use("/site-mail", siteMail);
 
+// ALlow getting of images
+app.get("/images/*", (req, res) => {
+    res.sendFile(__dirname + req._parsedOriginalUrl.path);
+})
+
 // Allow post to /images, placing an image in the static folder
 app.post("/images/*", (req, res) => {
     const targetPath = __dirname + "static/" + req._parsedUrl.path;
