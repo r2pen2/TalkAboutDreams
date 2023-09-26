@@ -20,24 +20,8 @@ section {
   width: 100%;
 }
 
-.box-container {
-  transition: all 1s ease;
-}
-
-.red-glow {
-  filter: drop-shadow(0px 0px 5px #EF2427);
-}
-
 .red-glow-light {
   filter: drop-shadow(0px 0px 5px #EF242766);
-}
-
-.panned-left {
-  transform: translateX(-100vw);
-}
-
-.panned-right {
-  transform: translateX(100vw);
 }
 
 .home-bio-container {
@@ -56,6 +40,8 @@ section {
 
 .dreams-img-large {
   border: .5rem solid #1a1a1e;
+  max-height: 500px;
+  width: auto;
 }
 
 .home-top-headshot {
@@ -92,16 +78,6 @@ section {
   .headshot-container {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .home-top-bio-container {  
-    margin-top: calc(2rem + calc(var(--headshotSize) / 2));
-  }
-}
-
-@media (max-width: 576px) {
-  .home-top-bio-container {  
-    padding-top: calc(calc(var(--headshotSize) / 2))
   }
 }
 
