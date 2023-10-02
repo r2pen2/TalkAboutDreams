@@ -1,9 +1,12 @@
 // Style Imports
 import './App.css';
+import "./libraries/Web-Legos/Layouts/wl.css";
 
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createContext } from 'react';
+
+import {WLThemeProvider, createWLTheme} from "./libraries/Web-Legos/Layouts/WLThemes"
 
 // API Imports
 import { firebaseConfig } from './api/firebase.ts'
@@ -11,6 +14,7 @@ import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Lego
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import Navbar from './components/Navbar';
 import Homepage from './routes/Homepage';
+import HomepageV2 from './routes/HomepageV2';
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -29,6 +33,8 @@ analyticsManager.initialize();
 const backgroundColor1 = "rgb(44, 44, 45)";
 const backgroundColor2 = "rgb(26, 26, 30)";
 export const platformGradient = `linear-gradient(239.59deg, ${backgroundColor1} -44.65%, ${backgroundColor2} 75.57%)`;
+
+const theme = createWLTheme();
 
 export function App(props) {
 
@@ -61,17 +67,20 @@ export function App(props) {
   // Return the app
   return (
     <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
-      { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
-      <Router>
-        <div className="app-content">
-          <Navbar />
-            <Routes>
-              <Route path="*" element={<Homepage />} />
-            </Routes>
-          {/** Place Footer Here */}
-        </div>
-      </Router>
+      <WLThemeProvider theme={theme}>
+        { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
+        <Router>
+          <div className="app-content">
+            {/* <Navbar /> */}
+              <Routes>
+                <Route path="*" element={<HomepageV2 />} />
+              </Routes>
+            {/** Place Footer Here */}
+          </div>
+        </Router>
+      </WLThemeProvider>
     </div>
+
   );
 }
 
