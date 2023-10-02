@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navbar as NextUINavbar, Text } from "@nextui-org/react";
+import { Link, Navbar as NextUINavbar, Text } from "@nextui-org/react";
 import {WLNavBrandLeft, WLNavContent} from "../libraries/Web-Legos/components/Navigation"
 
 import logo from "../assets/images/logoTransparent.svg"
@@ -24,11 +24,49 @@ export default function Navbar() {
         <WLNavContent.Right>
         </WLNavContent.Right>
       </WLNavContent>
+      <NextUINavbar.Collapse >
+        {collapseItems.map((item, index) => (
+          <NextUINavbar.CollapseItem key={index}>
+            <Link
+              color="inherit"
+              css={{
+                minWidth: "100%",
+              }}
+              href={item.href}
+            >
+              {item.name}
+            </Link>
+          </NextUINavbar.CollapseItem>
+        ))}
+      </NextUINavbar.Collapse>
     </NextUINavbar>
   )
 }
 
 const navbarItemFontSize = "20px";
+
+const collapseItems = [
+  {
+    name: "Home",
+    href: "/#dreams",
+  },
+  {
+    name: "Who I Am",
+    href: "/#julia",
+  },
+  {
+    name: "Services",
+    href: "/#services",
+  },
+  {
+    name: "Insights",
+    href: "/#insights",
+  },
+  {
+    name: "Contact",
+    href: "/#contact",
+  },
+];
 
 function NavbarPages() {
 

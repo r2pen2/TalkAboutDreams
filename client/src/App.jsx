@@ -15,6 +15,7 @@ import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import Navbar from './components/Navbar';
 import Homepage from './routes/Homepage';
 import HomepageV2 from './routes/HomepageV2';
+import {MailManager} from "./libraries/Web-Legos/api/mail.ts"
 
 /** Context to keep track whether we're running tests right now */
 export const TestingContext = createContext();
@@ -35,6 +36,9 @@ const backgroundColor2 = "rgb(26, 26, 30)";
 export const platformGradient = `linear-gradient(239.59deg, ${backgroundColor1} -44.65%, ${backgroundColor2} 75.57%)`;
 
 const theme = createWLTheme();
+
+export const TAGMailManager = new MailManager();
+TAGMailManager.addRecipientEmail("joedobbelaar@gmail.com");
 
 export function App(props) {
 

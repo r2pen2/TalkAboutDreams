@@ -20,8 +20,8 @@ app.use(fileUpload());
 dotenv.config();
 
 // Start listening on defined port
-app.listen(25565, () => {
-    console.log('Now listening on port ' + 25565);
+app.listen(3004, () => {
+    console.log('Now listening on port ' + 3004);
 });
 
 // Serve static files
@@ -40,7 +40,12 @@ app.use("/site-models", siteModels);
 // Server site rules
 app.use("/site-rules", siteRules);
 // Server site mail
-app.use("/site-mail", siteMail);
+// app.use("/site-mail", siteMail);
+
+// ALlow getting of images
+app.get("/images/*", (req, res) => {
+    res.sendFile(__dirname + req._parsedOriginalUrl.path);
+})
 
 // Allow post to /images, placing an image in the static folder
 app.post("/images/*", (req, res) => {
