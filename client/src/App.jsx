@@ -70,11 +70,11 @@ export function App(props) {
 
   // Return the app
   return (
-    <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
-      <WLThemeProvider theme={theme}>
+    <WLThemeProvider theme={theme}>
+      <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
-          <div className="app-content">
+          <div className="app-content" >
             {/* <Navbar /> */}
               <Routes>
                 <Route path="*" element={<HomepageV2 />} />
@@ -82,9 +82,8 @@ export function App(props) {
             {/** Place Footer Here */}
           </div>
         </Router>
-      </WLThemeProvider>
-    </div>
-
+      </div>
+    </WLThemeProvider>
   );
 }
 
