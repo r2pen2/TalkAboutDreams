@@ -1,9 +1,10 @@
 .splash {
   background-image: url("./assets/images/splash.png");
-  background-position: center center;
+  background-position-x: center;
+  background-position-y: 80%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 900px;
   width: 100%;
   position: relative;
 }
