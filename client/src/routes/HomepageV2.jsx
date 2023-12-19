@@ -28,7 +28,7 @@ export default function HomepageV2() {
           </NavbarMinimal.Item>
         </NavbarMinimal>
         <hgroup style={{maxWidth: 700}}>
-          <WLHeaderV2 align="center" color="white">Julia Dobbelaar</WLHeaderV2>
+          <WLHeaderV2 align="center" color="white">Julia Weissman</WLHeaderV2>
           <WLTextV2 align="center" className="fw-sb" color={swanBlueGray}>
             This is a place for you to talk about yourself as a dream analyst. This is a place for you to talk about yourself as a dream analyst. This is a place for you to talk about yourself as a dream analyst. This is a place for you to talk about yourself as a dream analyst. This is a place for you to talk about yourself as a dream analyst. This is a place for you to talk about yourself as a dream analyst.
           </WLTextV2>
@@ -47,7 +47,7 @@ export default function HomepageV2() {
         >
           <GlyphSectionTwoItemsNoActions.Glyph imageSource={flower}/>
           <GlyphSectionTwoItemsNoActions.Left>
-            <WLLayoutHeader>Julia Dobbelaar</WLLayoutHeader>
+            <WLLayoutHeader>Julia Weissman</WLLayoutHeader>
             <WLLayoutText>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda a totam repellat dolorum quidem ex accusantium non sunt aut facere, rem saepe minima deleniti suscipit laudantium eum harum ullam molestiae!
             </WLLayoutText>
