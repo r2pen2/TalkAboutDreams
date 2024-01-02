@@ -11,6 +11,8 @@ import { Text } from '@nextui-org/react';
 
 export default function HomepageV2({userCanEditText}) {
 
+  console.log(userCanEditText)
+
   return (
     <div className="d-flex flex-column align-items-center justify-content-center">
       <section className="splash d-flex flex-column align-items-center justify-content-center">
@@ -28,7 +30,7 @@ export default function HomepageV2({userCanEditText}) {
             Contact
           </NavbarMinimal.Item>
         </NavbarMinimal>
-        <hgroup style={{maxWidth: 700}}>
+        <hgroup style={{maxWidth: 700}} id="home">
           <h1 className="text-center">
             TALK<br/>
             ABOUT<br/>
@@ -44,21 +46,46 @@ export default function HomepageV2({userCanEditText}) {
         <img src={bridge} alt="bridge" className="wl-section-bottom"/>
       </section>
       <section>
-        <GlyphSectionTwoItemsNoActions
-          style={{
-            backgroundColor: swanWhite
-          }}
-        >
-          <GlyphSectionTwoItemsNoActions.Glyph imageSource={flower}/>
-          <GlyphSectionTwoItemsNoActions.Left>
+        <div className="w-100" style={{backgroundColor: swanWhite}}>
+          <div className="wl-glyph-section-two-items-no-actions d-none d-lg-flex wl-gap-3">
+            <div className="wl-glyph-section-two-items-no-actions-item text-center">
             <WLHeaderV2 editable={userCanEditText} firestoreId="bio-header" />
             <WLTextV2 editable={userCanEditText} firestoreId="bio" />
-          </GlyphSectionTwoItemsNoActions.Left>
-          <GlyphSectionTwoItemsNoActions.Right>
+            <div id="about" />
+            </div>
+            <div className="wl-glyph-section-two-items-no-actions-glyph-container">
+              <img src={flower} alt="glyph" className="wl-glyph-section-glyph" data-testid="wl-glyph-section-glyph" />
+            </div>
+            <div className="wl-glyph-section-two-items-no-actions-item text-center">
+            <div id="about" />
             <WLHeaderV2 editable={userCanEditText} firestoreId="goal-header"/>
             <WLTextV2 editable={userCanEditText} firestoreId="goal" />
-          </GlyphSectionTwoItemsNoActions.Right>
-        </GlyphSectionTwoItemsNoActions>
+            </div>
+          </div>
+          <div className="wl-glyph-section-two-items-no-actions d-flex d-lg-none">
+            <div className="wl-glyph-section-two-items-no-actions-md-container container-fluid">
+              <div className="row">
+                <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                  <div className="wl-glyph-section-two-items-no-actions-item text-center">
+            <WLHeaderV2 editable={userCanEditText} firestoreId="bio-header" />
+            <WLTextV2 editable={userCanEditText} firestoreId="bio" />
+            <div id="about" />
+                  </div>
+                </div>
+                <div className="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                  <div className="wl-glyph-section-two-items-no-actions-item text-center">
+            <div id="about" />
+            <WLHeaderV2 editable={userCanEditText} firestoreId="goal-header"/>
+            <WLTextV2 editable={userCanEditText} firestoreId="goal" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="wl-glyph-section-two-items-no-actions-glyph-container">
+              <img src={flower} alt="glyph" className="wl-glyph-section-glyph" data-testid="wl-glyph-section-glyph" />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   )
