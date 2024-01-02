@@ -7,6 +7,7 @@ import flower from "../assets/images/leaf.png";
 import { swanBlueGray, swanWhite } from '../libraries/Web-Legos/api/colors';
 import { ButtonRounded } from '../libraries/Web-Legos/Layouts/Buttons/Buttons';
 import NavbarMinimal from '../libraries/Web-Legos/Layouts/Navigation/Navbars';
+import { Text } from '@nextui-org/react';
 
 export default function HomepageV2({userCanEditText}) {
 
@@ -18,7 +19,7 @@ export default function HomepageV2({userCanEditText}) {
             Home
           </NavbarMinimal.Item>
           <NavbarMinimal.Item href="/#about">
-            Who I Am
+            About
           </NavbarMinimal.Item>
           <NavbarMinimal.Item href="/#services">
             Services
@@ -28,6 +29,11 @@ export default function HomepageV2({userCanEditText}) {
           </NavbarMinimal.Item>
         </NavbarMinimal>
         <hgroup style={{maxWidth: 700}}>
+          <h1 className="text-center">
+            TALK<br/>
+            ABOUT<br/>
+            DREAMS
+          </h1>
           <WLHeaderV2 editable={userCanEditText} firestoreId="header" align="center" color="white" />
           <WLTextV2 editable={userCanEditText} firestoreId="header-text" align="center" className="fw-sb" color={swanBlueGray} />
         </hgroup>

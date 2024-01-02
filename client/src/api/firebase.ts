@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyBpO-jv_h8s40JgZt1QPv8y_UoUnlNHrZo",
-  authDomain: "talk-about-d.firebaseapp.com",
-  projectId: "talk-about-d",
-  storageBucket: "talk-about-d.appspot.com",
-  messagingSenderId: "958994430331",
-  appId: "1:958994430331:web:40a4fd761c328eb77125de",
-  measurementId: "G-LHPHHM2XWW"
+  apiKey: "AIzaSyAWbFLjUXdBoarK-POQbiFFD6FT-YhdSac",
+  authDomain: "wladminportal.firebaseapp.com",
+  projectId: "wladminportal",
+  storageBucket: "wladminportal.appspot.com",
+  messagingSenderId: "76275437317",
+  appId: "1:76275437317:web:d2a7ee5c7d964eb87b716c",
+  measurementId: "G-61W670RMQR"
 };
