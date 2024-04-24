@@ -1,20 +1,10 @@
-.splash {
-  background-image: url("./assets/images/splash.png");
-  background-position-x: center;
-  background-position-y: 80%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 900px;
-  width: 100%;
-  position: relative;
-}
-
-
 /* Old Version */
 .App {
   width: 100vw;
   overflow-x: hidden;
   background: var(--wl-background);
+  font-family: "Kiwi Maru", serif !important;
+  font-style: normal !important;
 }
 
 section {

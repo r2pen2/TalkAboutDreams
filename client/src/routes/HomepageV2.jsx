@@ -6,8 +6,17 @@ import bridge from "../assets/images/bridge.svg";
 import flower from "../assets/images/leaf.png";
 import { swanBlueGray, swanWhite } from '../libraries/Web-Legos/api/colors';
 import { ButtonRounded } from '../libraries/Web-Legos/Layouts/Buttons/Buttons';
-import NavbarMinimal from '../libraries/Web-Legos/Layouts/Navigation/Navbars';
-import { Text } from '@nextui-org/react';
+
+import "../assets/style/homepageV2.css"
+import { Paper } from '@mantine/core';
+
+import moonLogo from "../assets/images/moonLogo.png";
+
+        
+const ContactButton = () => 
+<ButtonRounded color="#5738B3" size="lg">
+  Speak With Me
+</ButtonRounded>
 
 export default function HomepageV2({userCanEditText}) {
 
@@ -15,34 +24,26 @@ export default function HomepageV2({userCanEditText}) {
 
   return (
     <div className="d-flex flex-column align-items-center justify-content-center">
-      <section className="splash d-flex flex-column align-items-center justify-content-center">
-        <NavbarMinimal sticky>
-          <NavbarMinimal.Item href="/#home">
-            Home
-          </NavbarMinimal.Item>
-          <NavbarMinimal.Item href="/#about">
-            About
-          </NavbarMinimal.Item>
-          <NavbarMinimal.Item href="/#services">
-            Services
-          </NavbarMinimal.Item>
-          <NavbarMinimal.Item href="/#contact">
-            Contact
-          </NavbarMinimal.Item>
-        </NavbarMinimal>
-        <hgroup style={{maxWidth: 700}} id="home">
-          <h1 className="text-center">
-            TALK<br/>
-            ABOUT<br/>
-            DREAMS
-          </h1>
-          <WLHeaderV2 editable={userCanEditText} firestoreId="header" align="center" color="white" />
-          <WLTextV2 editable={userCanEditText} firestoreId="header-text" align="center" className="fw-sb" color={swanBlueGray} />
+      <section className="splash d-flex flex-column align-items-center justify-content-center px-2">
+        <hgroup style={{maxWidth: 800}} id="home">
+          <WLHeaderV2 editable={userCanEditText} firestoreId="header" align="center" color="white">Julia Dobbelaar</WLHeaderV2>
+          <WLTextV2 editable={userCanEditText} firestoreId="header-text" align="center" size={24} color="white">
+            One-on-one and group dream analysis sessions: Assisting individuals and training social workers to interpret and understand dreams, available both virtually and in person.
+          </WLTextV2>
         </hgroup>
+        <div className="dreams-line" />
         <div className="wl-spacer-2" />
-        <ButtonRounded color="#5738B3" size="lg">
-          Speak With Me
-        </ButtonRounded>
+        <Paper shadow="xl" style={{backgroundColor: "#fefefe", maxWidth: 1000}} className="d-flex flex-md-row flex-column align-items-start justify-content-center gap-2 p-lg-4 p-2">
+          <img src={moonLogo} alt="moonLogo" className="moon-logo" />
+          <div className="d-flex flex-column align-items-center justify-content-start h-100 gap-2">
+            <WLHeaderV2 editable={userCanEditText} firestoreId="header-2" align="left" size={32} color="#1e1e1e">Talk About Dreams</WLHeaderV2>
+            <WLTextV2 editable={userCanEditText} firestoreId="header-text-2" size={18} color="#525252">
+              The dream belongs to the dreamer and no one is truly in the position to tell you what your dream means. Rather than the traditional approach of treating dream images as a static set of symbols to be interpreyed, we will examine the dreamers responses to the content, in so do leads to insight into our parallel walking state behaviors.
+            </WLTextV2>
+            <div className="wl-spacer-1" />
+            <ContactButton />
+          </div>
+        </Paper>
         <img src={bridge} alt="bridge" className="wl-section-bottom"/>
       </section>
       <section>

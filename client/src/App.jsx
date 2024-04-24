@@ -5,7 +5,7 @@ import "./libraries/Web-Legos/Layouts/wl.css";
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { createContext, useEffect, useState } from 'react';
-
+import { createTheme as createMantineTheme, MantineProvider } from "@mantine/core"
 import {WLThemeProvider, createWLTheme} from "./libraries/Web-Legos/Layouts/WLThemes"
 import {FooterAuthButton} from "./libraries/Web-Legos/components/Auth"
 
@@ -13,7 +13,7 @@ import {FooterAuthButton} from "./libraries/Web-Legos/components/Auth"
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
-import Navbar from './components/Navbar';
+import Navbar from './components/NavbarV2';
 import Homepage from './routes/Homepage';
 import HomepageV2 from './routes/HomepageV2';
 import {MailManager} from "./libraries/Web-Legos/api/mail.ts"
@@ -38,7 +38,8 @@ const backgroundColor1 = "rgb(44, 44, 45)";
 const backgroundColor2 = "rgb(26, 26, 30)";
 export const platformGradient = `linear-gradient(239.59deg, ${backgroundColor1} -44.65%, ${backgroundColor2} 75.57%)`;
 
-const theme = createWLTheme();
+const wlTheme = createWLTheme();
+const mantineTheme = createMantineTheme({});
 
 export const TAGMailManager = new MailManager();
 TAGMailManager.addRecipientEmail("joedobbelaar@gmail.com");
@@ -86,12 +87,13 @@ export function App(props) {
 
   // Return the app
   return (
-    <WLThemeProvider theme={theme}>
+    <MantineProvider theme={mantineTheme}>
+    <WLThemeProvider theme={wlTheme}>
       <div className="App d-flex flex-column align-items-center w-100" data-testid="app">
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
           <div className="app-content" >
-            {/* <Navbar /> */}
+            <Navbar />
               <Routes>
                 <Route path="*" element={<HomepageV2 userCanEditText={userCanEditText} />} />
               </Routes>
@@ -119,6 +121,7 @@ export function App(props) {
         </Router>
       </div>
     </WLThemeProvider>
+    </MantineProvider>
   );
 }
 

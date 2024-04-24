@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe8ca354.css",
-    "main.js": "/static/js/main.368bfbcc.js",
+    "main.css": "/static/css/main.86faca48.css",
+    "main.js": "/static/js/main.9950dfc1.js",
     "static/js/783.49405dd9.chunk.js": "/static/js/783.49405dd9.chunk.js",
-    "static/media/splash.png": "/static/media/splash.4713dce5de500036e68f.png",
-    "static/media/logoTransparent.svg": "/static/media/logoTransparent.bae666ed9aa2d29c0e3518ae7ae00bca.svg",
+    "static/media/Waves2.png": "/static/media/Waves2.a122d9a51962597d5510.png",
+    "static/media/moonLogo.png": "/static/media/moonLogo.b66bb589d000596c768f.png",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
     "static/media/leaf.png": "/static/media/leaf.0271ce9d2248dfd000c3.png",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -13,12 +13,12 @@
     "static/media/bridge.svg": "/static/media/bridge.bdfb0a7d996b61f6831870dbddc7e6b6.svg",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.fe8ca354.css.map": "/static/css/main.fe8ca354.css.map",
-    "main.368bfbcc.js.map": "/static/js/main.368bfbcc.js.map",
+    "main.86faca48.css.map": "/static/css/main.86faca48.css.map",
+    "main.9950dfc1.js.map": "/static/js/main.9950dfc1.js.map",
     "783.49405dd9.chunk.js.map": "/static/js/783.49405dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe8ca354.css",
-    "static/js/main.368bfbcc.js"
+    "static/css/main.86faca48.css",
+    "static/js/main.9950dfc1.js"
   ]
 }
