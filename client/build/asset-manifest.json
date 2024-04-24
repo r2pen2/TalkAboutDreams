@@ -1,12 +1,7 @@
 {
   "files": {
-<<<<<<< HEAD
     "main.css": "/static/css/main.7792591a.css",
     "main.js": "/static/js/main.f5d0acda.js",
-=======
-    "main.css": "/static/css/main.86faca48.css",
-    "main.js": "/static/js/main.773d0935.js",
->>>>>>> ce30721fa0d1280f86131a94bd0ceed2d3864447
     "static/js/783.49405dd9.chunk.js": "/static/js/783.49405dd9.chunk.js",
     "static/media/Waves2.png": "/static/media/Waves2.a122d9a51962597d5510.png",
     "static/media/moonLogo.png": "/static/media/moonLogo.b66bb589d000596c768f.png",
@@ -19,7 +14,6 @@
     "static/media/bridge.svg": "/static/media/bridge.bdfb0a7d996b61f6831870dbddc7e6b6.svg",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-<<<<<<< HEAD
     "main.7792591a.css.map": "/static/css/main.7792591a.css.map",
     "main.f5d0acda.js.map": "/static/js/main.f5d0acda.js.map",
     "783.49405dd9.chunk.js.map": "/static/js/783.49405dd9.chunk.js.map"
@@ -27,14 +21,5 @@
   "entrypoints": [
     "static/css/main.7792591a.css",
     "static/js/main.f5d0acda.js"
-=======
-    "main.86faca48.css.map": "/static/css/main.86faca48.css.map",
-    "main.773d0935.js.map": "/static/js/main.773d0935.js.map",
-    "783.49405dd9.chunk.js.map": "/static/js/783.49405dd9.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.86faca48.css",
-    "static/js/main.773d0935.js"
->>>>>>> ce30721fa0d1280f86131a94bd0ceed2d3864447
   ]
 }
