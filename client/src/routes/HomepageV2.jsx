@@ -26,20 +26,16 @@ export default function HomepageV2({userCanEditText}) {
     <div className="d-flex flex-column align-items-center justify-content-center">
       <section className="splash d-flex flex-column align-items-center justify-content-center px-2">
         <hgroup style={{maxWidth: 800}} id="home">
-          <WLHeaderV2 editable={userCanEditText} firestoreId="header" align="center" color="white">Julia Dobbelaar</WLHeaderV2>
-          <WLTextV2 editable={userCanEditText} firestoreId="header-text" align="center" size={24} color="white">
-            One-on-one and group dream analysis sessions: Assisting individuals and training social workers to interpret and understand dreams, available both virtually and in person.
-          </WLTextV2>
+          <WLHeaderV2 editable={userCanEditText} firestoreId="header" align="center" color="white" />
+          <WLTextV2 editable={userCanEditText} firestoreId="subheader-text" align="center" size={24} color="white" />
         </hgroup>
         <div className="dreams-line" />
         <div className="wl-spacer-2" />
         <Paper shadow="xl" style={{backgroundColor: "#fefefe", maxWidth: 1000}} className="d-flex flex-md-row flex-column align-items-start justify-content-center gap-2 p-lg-4 p-2">
           <img src={moonLogo} alt="moonLogo" className="moon-logo" />
           <div className="d-flex flex-column align-items-center justify-content-start h-100 gap-2">
-            <WLHeaderV2 editable={userCanEditText} firestoreId="header-2" align="left" size={32} color="#1e1e1e">Talk About Dreams</WLHeaderV2>
-            <WLTextV2 editable={userCanEditText} firestoreId="header-text-2" size={18} color="#525252">
-              The dream belongs to the dreamer and no one is truly in the position to tell you what your dream means. Rather than the traditional approach of treating dream images as a static set of symbols to be interpreyed, we will examine the dreamers responses to the content, in so do leads to insight into our parallel walking state behaviors.
-            </WLTextV2>
+            <WLHeaderV2 editable={userCanEditText} firestoreId="brand-label" align="left" size={32} color="#1e1e1e"/>
+            <WLTextV2 editable={userCanEditText} firestoreId="brand-info" size={18} color="#525252" />
             <div className="wl-spacer-1" />
             <ContactButton />
           </div>
