@@ -99,7 +99,7 @@ export function App(props) {
               </Routes>
               <footer className="p-5 flex-column align-items-center justify-content-center">
                 <div id="contact" className="d-flex flex-column align-items-center justfy-content-center">
-                  <div className="flex-row d-flex gap-2 align-items-center justify-content-start">
+                  <div className="flex-column d-flex gap-2 align-items-center justify-content-start">
                     <Link href="mailto:talkaboutdreams@yahoo.com">
                       <Text size="$lg" css={{textDecoration:"underline"}}>talkaboutdreams@yahoo.com</Text>
                     </Link>
