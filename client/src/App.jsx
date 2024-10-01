@@ -100,12 +100,12 @@ export function App(props) {
               <footer className="p-5 flex-column align-items-center justify-content-center">
                 <div id="contact" className="d-flex flex-column align-items-center justfy-content-center">
                   <div className="flex-row d-flex gap-2 align-items-center justify-content-start">
-                    <Link href="mailto:emailingjulia@yahoo.com">
-                      <Text size="$lg" css={{textDecoration:"underline"}}>emailingjulia@yahoo.com</Text>
+                    <Link href="mailto:talkaboutdreams@yahoo.com">
+                      <Text size="$lg" css={{textDecoration:"underline"}}>talkaboutdreams@yahoo.com</Text>
                     </Link>
                     <Text>・</Text>
-                    <Link href="callto:6174557228">
-                      <Text size="$lg" css={{textDecoration:"underline"}}>(617) 455-7228</Text>
+                    <Link href="callto:6172991792">
+                      <Text size="$lg" css={{textDecoration:"underline"}}>(617) 299-1792</Text>
                     </Link>
                   </div>
                 </div>
