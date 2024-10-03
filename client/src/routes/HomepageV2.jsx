@@ -48,7 +48,7 @@ export default function HomepageV2({userCanEditText, userCanEditImages}) {
 
     return (
     <section id="about" className="d-flex flex-column align-items-center pt-5" style={{backgroundColor: "#F4FBFC", position: "relative"}}>
-      <div className="container-fluid" style={{maxWidth: 1300}}>
+      <div className="container-fluid" style={{maxWidth: 900}}>
         <div className="row align-items-center d-flex">
           <JuliaImageLarge />
           <div className="d-flex flex-column align-items-start col-12 col-lg-7 text-center text-lg-start ">
@@ -56,12 +56,9 @@ export default function HomepageV2({userCanEditText, userCanEditImages}) {
             <div className="dreams-line full px-2" />
             <div className="container-fluid pb-5">
               <div className="row">
-                <div className="col-12 col-md-6 px-2 pb-2 text-start">
+                <div className="col-12 px-2 pb-2 text-start">
                   <WLTextV2 editable={userCanEditText} firestoreId="about-blurb-1" />
                 </div>
-                {/* <div className="col-12 col-md-6 px-2 text-start">
-                  <WLTextV2 editable={userCanEditText} firestoreId="about-blurb-2" />
-                </div> */}
               </div>
             </div>
           </div>
