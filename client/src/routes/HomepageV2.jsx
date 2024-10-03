@@ -59,9 +59,9 @@ export default function HomepageV2({userCanEditText, userCanEditImages}) {
                 <div className="col-12 col-md-6 px-2 pb-2 text-start">
                   <WLTextV2 editable={userCanEditText} firestoreId="about-blurb-1" />
                 </div>
-                <div className="col-12 col-md-6 px-2 text-start">
+                {/* <div className="col-12 col-md-6 px-2 text-start">
                   <WLTextV2 editable={userCanEditText} firestoreId="about-blurb-2" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
