@@ -31,7 +31,7 @@ export default function HomepageV2({userCanEditText, userCanEditImages}) {
           <WLHeaderV2 editable={userCanEditText} firestoreId="brand-label" align="left" size={32} color="#1e1e1e"/>
           <WLTextV2 editable={userCanEditText} firestoreId="brand-info" size={18} color="#525252" />
           <div className="wl-spacer-1" />
-          <ButtonRounded color="#5738B3" size="lg" opClick={() => window.open("mailto:talkaboutdreams@yahoo.com")}>
+          <ButtonRounded color="#5738B3" size="lg" onClick={() => window.open("mailto:talkaboutdreams@yahoo.com")}>
             Speak With Me
           </ButtonRounded>
         </div>
